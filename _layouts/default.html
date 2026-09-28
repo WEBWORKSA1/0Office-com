@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.t }}</title>
+<meta name="description" content="{{ page.d }}">
+<link rel="canonical" href="{{ page.canon }}">
+<meta name="robots" content="{{ page.robots }}">
+<meta name="theme-color" content="#0d9488">
+<meta property="og:type" content="website"><meta property="og:site_name" content="0Office.com">
+<meta property="og:title" content="{{ page.t }}"><meta property="og:description" content="{{ page.d }}">
+<meta property="og:url" content="{{ page.canon }}">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="{{ page.root }}assets/img/logo.svg" type="image/svg+xml">
+<link rel="manifest" href="{{ page.root }}manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ page.root }}assets/css/style.css">
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("o0-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+{{ page.ld }}</head>
+<body data-root="{{ page.root }}">
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar" role="note"><div class="container"><span class="dot" aria-hidden="true"></span>
+<span><a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership</a></span></div></div>
+<header class="site-header"><div class="container nav">
+<a class="logo" href="{{ page.root }}index.html" aria-label="0Office.com home"><img class="logo-mark" src="{{ page.root }}assets/img/logo.svg" alt="" width="36" height="36"><span>0Office<small>.com</small></span></a>
+<nav class="nav-links" id="navLinks" aria-label="Main"><a href="{{ page.root }}tools/index.html"{% if page.active == "tools" %} aria-current="page"{% endif %}>Free Tools</a><a href="{{ page.root }}guides/index.html"{% if page.active == "guides" %} aria-current="page"{% endif %}>Guides</a><a href="{{ page.root }}stack.html"{% if page.active == "stack" %} aria-current="page"{% endif %}>Remote Stack</a><a href="{{ page.root }}videos.html"{% if page.active == "videos" %} aria-current="page"{% endif %}>Videos</a><a href="{{ page.root }}hire.html"{% if page.active == "hire" %} aria-current="page"{% endif %}>Hire Talent</a><a href="{{ page.root }}contests.html"{% if page.active == "contests" %} aria-current="page"{% endif %}>Contests</a><a href="{{ page.root }}support.html"{% if page.active == "support" %} aria-current="page"{% endif %}>Support Us</a><a href="{{ page.root }}get-started.html" class="btn btn-primary btn-sm" style="margin-left:6px">Free Plan</a></nav>
+<div class="nav-actions">
+<button class="icon-btn" data-search aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">⌕</button>
+<button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+</div></div></header>
+<main id="main">
+{{ content }}
+</main>
+<footer class="site-footer"><div class="container">
+<div class="foot-grid">
+<div><a class="logo" href="{{ page.root }}index.html" style="color:#fff"><img class="logo-mark" src="{{ page.root }}assets/img/logo.svg" alt="" width="36" height="36"><span>0Office<small style="color:#9fb0cc">.com</small></span></a>
+<p style="margin-top:12px">Run your business from anywhere — zero office required. Free in-browser office tools, practical remote-work guides, and vetted help to set up a business that doesn't need a lease.</p>
+<a class="btn btn-primary btn-sm" href="{{ page.root }}get-started.html">Get your free plan →</a></div>
+<div><h4>Free tools</h4><ul>
+<li><a href="{{ page.root }}tools/invoice-generator.html">Invoice Generator</a></li>
+<li><a href="{{ page.root }}tools/meeting-cost-calculator.html">Meeting Cost Calculator</a></li>
+<li><a href="{{ page.root }}tools/time-zone-planner.html">Time Zone Planner</a></li>
+<li><a href="{{ page.root }}tools/pomodoro-timer.html">Pomodoro Timer</a></li>
+<li><a href="{{ page.root }}tools/index.html">All tools →</a></li></ul></div>
+<div><h4>Resources</h4><ul>
+<li><a href="{{ page.root }}guides/index.html">Guides</a></li>
+<li><a href="{{ page.root }}stack.html">Remote Stack Directory</a></li>
+<li><a href="{{ page.root }}checklist.html">Zero-Office Checklist</a></li>
+<li><a href="{{ page.root }}videos.html">Videos</a></li>
+<li><a href="{{ page.root }}hire.html">Hire Remote Talent</a></li></ul></div>
+<div><h4>Partner &amp; earn</h4><ul>
+<li><a href="{{ page.root }}advertise.html">Advertise / Sponsor</a></li>
+<li><a href="{{ page.root }}contests.html">Contests &amp; Prizes</a></li>
+<li><a href="{{ page.root }}careers.html">Work With Us</a></li>
+<li><a href="{{ page.root }}support.html">Donate / Support</a></li>
+<li><a href="https://web.works/contact" target="_blank" rel="noopener">Buy / Partner on this domain</a></li></ul></div>
+<div><h4>Company</h4><ul>
+<li><a href="{{ page.root }}about.html">About</a></li>
+<li><a href="{{ page.root }}contact.html">Contact</a></li>
+<li><a href="{{ page.root }}privacy.html">Privacy &amp; Cookies</a></li>
+<li><a href="{{ page.root }}terms.html">Terms of Use</a></li>
+<li><a href="{{ page.root }}disclaimer.html">Disclaimer &amp; Trademarks</a></li></ul></div>
+</div>
+<p class="foot-legal">0Office.com is an independent website and is not affiliated with, endorsed by, or sponsored by Microsoft Corporation (Microsoft Office / Microsoft 365), Ascensio System SIA (ONLYOFFICE), The Document Foundation (LibreOffice), Kingsoft (WPS Office), Google, Zoho or any other company named on this site. All product names, logos and brands are property of their respective owners and are used for identification only. Some links may be affiliate or sponsored links — see our <a href="{{ page.root }}disclaimer.html">disclosures</a>.</p>
+<div class="foot-bottom"><span>© <span id="year">2026</span> 0Office.com. All rights reserved. Original content and code are protected by copyright.</span>
+<span><a href="{{ page.root }}sitemap.xml">Sitemap</a> · <a href="{{ page.root }}contact.html">Contact</a> · <a href="https://web.works/contact" target="_blank" rel="noopener">Domain &amp; partnership inquiries</a></span></div>
+</div></footer>
+<a class="btn btn-primary float-cta no-print" id="floatCta" href="{{ page.root }}get-started.html">Get free plan →</a>
+<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie consent"><strong>Cookies &amp; privacy</strong>
+<p class="muted" style="margin:6px 0 0;font-size:.9rem">We use essential storage to run the tools. With your consent we also use analytics and advertising cookies (e.g. Google AdSense) to keep the site free. <a href="{{ page.root }}privacy.html#cookies">Details</a></p>
+<div class="row"><button class="btn btn-primary btn-sm" data-consent="all">Accept all</button><button class="btn btn-ghost btn-sm" data-consent="essential">Essential only</button></div></div>
+<div class="modal" id="searchModal" role="dialog" aria-label="Search"><div class="modal-box"><input id="searchInput" type="search" placeholder="Search tools, guides, pages…" aria-label="Search"><div class="results" id="searchResults"></div></div></div>
+<script src="{{ page.root }}assets/js/config.js"></script>
+<script src="{{ page.root }}assets/js/search-index.js" defer></script>
+<script src="{{ page.root }}assets/js/app.js" defer></script>
+{{ page.extra }}
+</body>
+</html>

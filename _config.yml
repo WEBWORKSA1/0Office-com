@@ -1,0 +1,3 @@
+# GitHub Pages (Jekyll) settings for 0Office.com
+title: 0Office.com
+exclude: [README.md, build.py, src, docs, .gitignore]
