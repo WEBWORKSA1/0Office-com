@@ -19,6 +19,9 @@ NAV = [
 ]
 
 INDEX = []  # search index entries, filled by page()
+# "jekyll": pages are emitted as front matter + body and share _layouts/default.html
+# (GitHub Pages renders them). "static": fully rendered standalone HTML (local preview).
+MODE = "jekyll"
 
 
 def esc(s):
@@ -30,11 +33,16 @@ def topbar():
 <span><a href="{OWNER_URL}" target="_blank" rel="noopener">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership</a></span></div></div>'''
 
 
-def header(root, active):
+def header(root, active, liquid=False):
     cur = ' aria-current="page"'
-    links = "".join(
-        f'<a href="{root}{u}"{cur if k == active else ""}>{t}</a>' for u, t, k in NAV
-    )
+    if liquid:
+        links = "".join(
+            f'<a href="{root}{u}"{{% if page.active == "{k}" %}}{cur}{{% endif %}}>{t}</a>' for u, t, k in NAV
+        )
+    else:
+        links = "".join(
+            f'<a href="{root}{u}"{cur if k == active else ""}>{t}</a>' for u, t, k in NAV
+        )
     return f'''<a class="skip" href="#main">Skip to content</a>
 {topbar()}
 <header class="site-header"><div class="container nav">
@@ -167,18 +175,31 @@ def page(path, title, desc, body, active="", schema=None, scripts=(), keywords="
     for s in ([base_ld] if path == "index.html" else []) + (schema or []):
         ld += f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False)}</script>\n'
     extra = "".join(f'<script src="{root}assets/js/{s}" defer></script>' for s in scripts)
+    if MODE == "jekyll":
+        fm = {"layout": "default", "t": esc(full_title), "d": esc(desc), "canon": url,
+              "robots": "index,follow" if index else "noindex", "root": root, "active": active, "ld": ld, "extra": extra}
+        front = "---\n" + "".join(f"{k}: {json.dumps(v, ensure_ascii=False)}\n" for k, v in fm.items()) + "---\n"
+        return front + "{% raw %}" + f"{hero or ''}\n{body}" + "{% endraw %}\n"
+    return shell(root, active, esc(full_title), esc(desc), url, "index,follow" if index else "noindex", ld, extra, f"{hero or ''}\n{body}")
+
+
+def jekyll_layout():
+    return shell("{{ page.root }}", None, "{{ page.t }}", "{{ page.d }}", "{{ page.canon }}", "{{ page.robots }}", "{{ page.ld }}", "{{ page.extra }}", "{{ content }}", liquid=True)
+
+
+def shell(root, active, title, desc, url, robots, ld, extra, content, liquid=False):
     return f'''<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(full_title)}</title>
-<meta name="description" content="{esc(desc)}">
+<title>{title}</title>
+<meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
-<meta name="robots" content="{"index,follow" if index else "noindex"}">
+<meta name="robots" content="{robots}">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website"><meta property="og:site_name" content="0Office.com">
-<meta property="og:title" content="{esc(full_title)}"><meta property="og:description" content="{esc(desc)}">
+<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="{root}assets/img/logo.svg" type="image/svg+xml">
@@ -189,10 +210,9 @@ def page(path, title, desc, body, active="", schema=None, scripts=(), keywords="
 <script>document.documentElement.classList.add("js");try{{var t=localStorage.getItem("o0-theme");if(t)document.documentElement.setAttribute("data-theme",t)}}catch(e){{}}</script>
 {ld}</head>
 <body data-root="{root}">
-{header(root, active)}
+{header(root, active, liquid)}
 <main id="main">
-{hero or ""}
-{body}
+{content}
 </main>
 {footer(root)}
 <script src="{root}assets/js/config.js"></script>

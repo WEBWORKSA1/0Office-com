@@ -5,7 +5,7 @@ Static, responsive website: 12 free in-browser office tools, remote-work guides,
 **Live:** https://webworksa1.github.io/0Office-com/
 
 ## Structure
-- `build.py` + `src/*.py`: a Python generator that renders all HTML pages from one shared layout. Edit the content in `src/`, then run `python3 build.py`.
+- `build.py` + `src/*.py`: the Python generator. Edit content in `src/`, run `python3 build.py`, and commit. It writes each page as front matter plus body, and `_layouts/default.html` holds the shared header, top bar and footer. GitHub Pages' built-in Jekyll assembles the final HTML on the free plan, with no Actions needed. Run `python3 build.py --static out/` to get fully rendered standalone HTML for local preview or another host.
 - `assets/js/config.js`: **the only file you need to edit for monetization.** It holds the AdSense, GA4, donation links, YouTube videos, affiliate links and FormSubmit alias.
 - `assets/js/app.js`: site runtime (theme, search, forms, ads, consent, videos, donations).
 - `assets/js/tools.js`: logic for all tools. Everything runs client-side.

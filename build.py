@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-"""Build 0Office.com static site. Usage: python3 build.py
-Outputs HTML into the repo root (GitHub Pages serves the root of the main branch).
+"""Build 0Office.com.
+
+  python3 build.py                 -> Jekyll sources in the repo root (GitHub Pages renders them
+                                      with _layouts/default.html on its free plan; no Actions needed)
+  python3 build.py --static OUTDIR -> fully rendered standalone HTML for local preview / other hosts
 """
 import json, os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
@@ -9,6 +12,9 @@ from layout import SITE_URL
 import pages, tools_pages, guides
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+if "--static" in sys.argv:
+    layout.MODE = "static"
+    ROOT = os.path.abspath(sys.argv[sys.argv.index("--static") + 1])
 # Path prefix the site is served under (for the 404 page). "/" when on a custom domain.
 BASE_PATH = "/" if SITE_URL.count("/") == 2 else "/" + SITE_URL.split("/", 3)[3].strip("/") + "/"
 
@@ -37,6 +43,11 @@ def main():
     for p, html in out.items():
         write(p, html)
 
+    if layout.MODE == "jekyll":
+        write("_layouts/default.html", layout.jekyll_layout())
+        write("_config.yml", "# GitHub Pages (Jekyll) settings for 0Office.com\n"
+              "title: 0Office.com\n"
+              "exclude: [README.md, build.py, src, docs, .gitignore]\n")
     write("assets/js/search-index.js", "window.O0_INDEX=" + json.dumps(layout.INDEX, ensure_ascii=False) + ";\n")
     urls = [p for p in out if p != "404.html"]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
