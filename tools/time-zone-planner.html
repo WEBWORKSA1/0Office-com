@@ -1,0 +1,37 @@
+---
+layout: "default"
+t: "Time Zone Meeting Planner — Free, No Signup | 0Office.com"
+d: "Find overlapping working hours across cities and share the view with one link."
+canon: "https://webworksa1.github.io/0Office-com/tools/time-zone-planner.html"
+robots: "index,follow"
+root: "../"
+active: "tools"
+ld: "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Time Zone Meeting Planner\", \"applicationCategory\": \"BusinessApplication\", \"operatingSystem\": \"Any (web browser)\", \"offers\": {\"@type\": \"Offer\", \"price\": \"0\", \"priceCurrency\": \"USD\"}, \"description\": \"Find overlapping working hours across cities and share the view with one link.\"}</script>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Does it handle daylight saving time?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. It uses your browser’s built-in time zone database, which applies daylight-saving rules for each zone.\"}}, {\"@type\": \"Question\", \"name\": \"Can I share the planner with my team?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes — the URL updates with your selected zones. Click “Copy shareable link” and paste it into chat.\"}}]}</script>\n"
+extra: "<script src=\"../assets/js/tools.js\" defer></script>"
+---
+{% raw %}<div class="page-hero"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../tools/index.html">Free Tools</a> / Time Zone Meeting Planner</nav><span class="eyebrow">Teams</span><h1>🌐 Time Zone Meeting Planner</h1><p class="lead muted" style="font-size:1.15rem;max-width:760px">Find overlapping working hours across cities and share the view with one link. 100% free, private, runs in your browser.</p></div></div>
+<div class="container" style="padding-top:28px;padding-bottom:20px">
+<div class="tool-shell"><div>
+<div class="tool-box" data-tool="timezone"><form id="tzAdd" class="form-row" style="align-items:end"><div><label for="tzInput">Add a city / time zone</label><input id="tzInput" list="tzList" placeholder="e.g. Europe/Paris" autocomplete="off"><datalist id="tzList"></datalist></div><div><button class="btn btn-primary" type="submit">+ Add zone</button></div></form>
+<div class="form-row" style="margin-top:10px"><div><label for="tzStart">Working day starts (local hour)</label><input id="tzStart" type="number" min="0" max="23" value="9"></div><div><label for="tzEnd">Working day ends</label><input id="tzEnd" type="number" min="1" max="24" value="17"></div></div>
+<div class="tz-grid" id="tzGrid" style="margin-top:16px"></div>
+<p id="tzBest" class="muted" style="margin-top:10px"></p>
+<button class="btn btn-ghost btn-sm" id="tzShare" type="button">🔗 Copy shareable link</button></div>
+<div class="ad-slot no-print" aria-label="Advertisement"><div class="ad-inner" data-ad="inContent"></div></div>
+<div class="prose" style="margin:0;max-width:none"><h2>How to use the Time Zone Meeting Planner</h2><ol><li>Your local zone is added automatically. Add teammates’ zones from the list.</li><li>Set your working-day window.</li><li>Solid-coloured columns are hours when everyone is inside working hours. Copy the link to share this exact view.</li></ol>
+<h2>Frequently asked questions</h2><details><summary>Does it handle daylight saving time?</summary><p>Yes. It uses your browser’s built-in time zone database, which applies daylight-saving rules for each zone.</p></details><details><summary>Can I share the planner with my team?</summary><p>Yes — the URL updates with your selected zones. Click “Copy shareable link” and paste it into chat.</p></details></div>
+</div>
+<aside class="sidebar no-print">
+<div class="card"><h3>Going office-free?</h3><p style="margin-bottom:12px">Get a free, personalised plan: address, phone, payroll and tools — matched to your city and budget.</p><a class="btn btn-primary btn-block" href="../get-started.html">Get my free plan</a></div>
+<div class="ad-slot no-print" style="padding:0;margin:0 0 16px" aria-label="Advertisement"><div class="ad-inner" data-ad="sidebar"></div></div>
+<div class="card"><h3>More free tools</h3><ul><li><a href="invoice-generator.html">🧾 Free Invoice Generator</a></li><li><a href="meeting-cost-calculator.html">💸 Meeting Cost Calculator</a></li><li><a href="pomodoro-timer.html">⏱️ Pomodoro Focus Timer</a></li><li><a href="word-counter.html">🔤 Word & Character Counter</a></li><li><a href="salary-converter.html">💱 Salary & Hourly Rate Converter</a></li><li><a href="remote-work-savings-calculator.html">🏡 Remote Work Savings Calculator</a></li></ul></div>
+<div class="card"><h3>Sponsor this tool</h3><p style="margin-bottom:12px">Put your brand in front of people doing this exact task.</p><a class="btn btn-ghost btn-block" href="../advertise.html">See sponsorships</a></div>
+</aside></div></div>
+<section><div class="container"><div class="cta-band reveal">
+<div><span class="eyebrow" style="background:rgba(255,255,255,.12);color:#99f6e4">Newsletter</span><h2 style="color:#fff">Get the Zero-Office Brief</h2><p>One practical email every two weeks: new free tools, remote-work playbooks, and deals on the software remote teams actually use. No spam — unsubscribe anytime.</p></div>
+<form class="form" data-form="Newsletter signup" data-success="You're in! Watch your inbox for the next Zero-Office Brief."><input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="sr-only" for="nl-email">Email</label><input id="nl-email" type="email" name="email" required placeholder="you@company.com" autocomplete="email">
+<select name="role" aria-label="I am a…"><option>Founder / business owner</option><option>Freelancer / solopreneur</option><option>Team lead / HR</option><option>Remote employee</option><option>Digital nomad</option></select>
+<button class="btn btn-primary btn-block" type="submit">Subscribe free</button><div class="form-status" role="status" aria-live="polite"></div>
+<p class="form-note" style="color:#94a3b8">By subscribing you agree to our <a href="../privacy.html" style="color:#cbd5e1">privacy policy</a>.</p></form>
+</div></div></section>{% endraw %}
