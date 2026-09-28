@@ -1,0 +1,34 @@
+---
+layout: "default"
+t: "Support 0Office.com — Donate"
+d: "Support 0Office.com with a one-time or monthly donation to keep free office tools online and fund new tools, promotion, talent and contest prizes."
+canon: "https://webworksa1.github.io/0Office-com/support.html"
+robots: "index,follow"
+root: ""
+active: "support"
+ld: ""
+extra: ""
+---
+{% raw %}<div class="page-hero"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / Support Us</nav><span class="eyebrow">Donate</span><h1>Keep 0Office free for everyone</h1><p class="lead muted" style="font-size:1.15rem;max-width:760px">Your support funds operations, new tools, promotion, hiring talent and contest prizes.</p></div></div>
+<section style="padding-top:36px"><div class="container">
+<div class="grid g4">
+<div class="card tier"><h3>☕ Coffee</h3><div class="price">$5</div><ul><li>Keeps a tool online for a month</li><li>Our sincere thanks</li></ul><button class="btn btn-ghost btn-block" data-amount="5" type="button">Give $5</button></div>
+<div class="card tier featured"><span class="ribbon">Popular</span><h3>💚 Supporter</h3><div class="price">$25</div><ul><li>Funds a new guide or tool feature</li><li>Name on the supporters wall (optional)</li></ul><button class="btn btn-primary btn-block" data-amount="25" type="button">Give $25</button></div>
+<div class="card tier"><h3>🚀 Champion</h3><div class="price">$100</div><ul><li>Funds contest prizes &amp; promotion</li><li>Supporters wall + newsletter thanks</li></ul><button class="btn btn-ghost btn-block" data-amount="100" type="button">Give $100</button></div>
+<div class="card tier"><h3>🏢 Patron</h3><div class="price">Custom</div><ul><li>Monthly or one-off</li><li>Recognition options for companies</li></ul><a class="btn btn-ghost btn-block" href="#pledge">Talk to us</a></div></div>
+<div class="card center" style="margin-top:24px"><h3>Give securely with</h3><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px">
+<a class="btn btn-ghost" data-donate="paypal">PayPal</a><a class="btn btn-ghost" data-donate="stripe">Card (Stripe)</a><a class="btn btn-ghost" data-donate="buymeacoffee">Buy Me a Coffee</a><a class="btn btn-ghost" data-donate="kofi">Ko-fi</a><a class="btn btn-ghost" data-donate="githubSponsors">GitHub Sponsors</a></div>
+<p class="form-note" style="margin-top:10px">Payment is processed by the provider you choose; we never see your card details. If a button takes you to the pledge form, that method is being set up — pledge below and we'll send a secure payment link.</p></div></div></section>
+<section class="alt"><div class="container lead-wrap">
+<div><h2>Where your support goes</h2><p class="muted">Our planned allocation of reader support:</p><div style="margin:12px 0"><div style="display:flex;justify-content:space-between"><span>Operations &amp; hosting</span><b>30%</b></div><div class="progress" style="margin:6px 0 0"><i style="width:30%"></i></div></div><div style="margin:12px 0"><div style="display:flex;justify-content:space-between"><span>New free tools &amp; content</span><b>30%</b></div><div class="progress" style="margin:6px 0 0"><i style="width:30%"></i></div></div><div style="margin:12px 0"><div style="display:flex;justify-content:space-between"><span>Promotion &amp; marketing</span><b>15%</b></div><div class="progress" style="margin:6px 0 0"><i style="width:15%"></i></div></div><div style="margin:12px 0"><div style="display:flex;justify-content:space-between"><span>Hiring talent</span><b>15%</b></div><div class="progress" style="margin:6px 0 0"><i style="width:15%"></i></div></div><div style="margin:12px 0"><div style="display:flex;justify-content:space-between"><span>Contest prizes</span><b>10%</b></div><div class="progress" style="margin:6px 0 0"><i style="width:10%"></i></div></div>
+<p class="muted" style="margin-top:14px"><small>0Office.com is an independent website, not a registered charity; contributions are not tax-deductible.</small></p>
+<h3 style="margin-top:24px">Other ways to help</h3><ul class="ticks"><li>Share a tool with a colleague</li><li><a href="careers.html#apply">Contribute a guide</a></li><li><a href="contests.html">Enter or sponsor a contest</a></li><li>Whitelist us in your ad blocker</li></ul></div>
+<form class="form lead-card" id="pledge" data-form="Donation pledge" data-success="Thank you! 💚 We'll email you a secure payment link shortly."><input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+<h3>Pledge your support</h3>
+<div class="form-row"><div><label for="pledgeAmount">Amount (USD)</label><input id="pledgeAmount" type="number" min="1" name="amount" value="25" required></div>
+<div><label for="p-freq">Frequency</label><select id="p-freq" name="frequency"><option>One-time</option><option>Monthly</option><option>Yearly</option></select></div></div>
+<div><label for="p-use">Direct it to (optional)</label><select id="p-use" name="direct_to"><option>Wherever needed most</option><option>Operations &amp; hosting</option><option>New tools &amp; content</option><option>Promotion &amp; marketing</option><option>Hiring talent</option><option>Contest prizes</option></select></div>
+<div class="form-row"><div><label for="p-name">Name</label><input id="p-name" name="name" required></div><div><label for="p-email">Email</label><input id="p-email" type="email" name="email" required></div></div>
+<div><label for="p-msg">Message (optional)</label><textarea id="p-msg" name="message" rows="3"></textarea></div>
+<label class="check"><input type="checkbox" name="public_credit" value="yes"> List my name on the supporters wall</label>
+<button class="btn btn-primary" type="submit">Pledge support</button><div class="form-status" role="status" aria-live="polite"></div></form></div></section>{% endraw %}
