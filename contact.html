@@ -1,0 +1,23 @@
+---
+layout: "default"
+t: "Contact 0Office.com"
+d: "Contact 0Office.com for questions, tool requests, partnerships, advertising, press or privacy requests."
+canon: "https://webworksa1.github.io/0Office-com/contact.html"
+robots: "index,follow"
+root: ""
+active: ""
+ld: ""
+extra: ""
+---
+{% raw %}<div class="page-hero"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / Contact</nav><span class="eyebrow">Contact</span><h1>Contact us</h1><p class="lead muted" style="font-size:1.15rem;max-width:760px">Questions, ideas, partnerships or bug reports — we'd love to hear from you.</p></div></div>
+<section style="padding-top:36px"><div class="container lead-wrap">
+<div><h2>Get in touch</h2><p class="muted">We reply to every message, usually within one business day.</p>
+<div class="card" style="margin:14px 0"><h3>📧 Email</h3><p style="margin-bottom:10px">Prefer your own mail app?</p><a class="btn btn-ghost btn-sm" href="#" data-mail="Hello from 0Office.com">Email us</a></div>
+<div class="card" style="margin:14px 0"><h3>🤝 Domain, sponsorship &amp; partnership</h3><p style="margin-bottom:10px">Interested in this website or the 0Office.com domain?</p><a class="btn btn-accent btn-sm" href="https://web.works/contact" target="_blank" rel="noopener">Owner contact ↗</a></div>
+<div class="card"><h3>⚡ Quick links</h3><p><a href="get-started.html">Free Zero-Office plan</a> · <a href="advertise.html">Advertise</a> · <a href="hire.html">Hire talent</a> · <a href="careers.html">Careers</a></p></div></div>
+<form class="form lead-card" data-form="Contact message" data-success="Message sent ✓ — we'll reply by email soon."><input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div><label for="ct-topic">Topic</label><select id="ct-topic" name="topic"><option>General question</option><option>Tool request</option><option>Bug report</option><option>Partnership</option><option>Advertising / sponsorship</option><option>Press</option><option>Domain / website acquisition</option><option>Privacy request</option></select></div>
+<div class="form-row"><div><label for="ct-name">Name</label><input id="ct-name" name="name" required autocomplete="name"></div><div><label for="ct-email">Email</label><input id="ct-email" type="email" name="email" required autocomplete="email"></div></div>
+<div><label for="ct-msg">Message</label><textarea id="ct-msg" name="message" required rows="6"></textarea></div>
+<button class="btn btn-primary" type="submit">Send message</button><div class="form-status" role="status" aria-live="polite"></div></form></div></section>
+<script>(function(){var t=new URLSearchParams(location.search).get("topic");if(t){var s=document.getElementById("ct-topic");var o=document.createElement("option");o.text=t;o.selected=true;s.add(o,0);}})();</script>{% endraw %}
